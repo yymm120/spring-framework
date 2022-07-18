@@ -1,38 +1,18 @@
-# <img src="src/docs/spring-framework.png" width="80" height="80"> Spring Framework [![Build Status](https://ci.spring.io/api/v1/teams/spring-framework/pipelines/spring-framework-5.3.x/jobs/build/badge)](https://ci.spring.io/teams/spring-framework/pipelines/spring-framework-5.3.x?groups=Build") [![Revved up by Gradle Enterprise](https://img.shields.io/badge/Revved%20up%20by-Gradle%20Enterprise-06A0CE?logo=Gradle&labelColor=02303A)](https://ge.spring.io/scans?search.rootProjectNames=spring)
 
-This is the home of the Spring Framework: the foundation for all [Spring projects](https://spring.io/projects). Collectively the Spring Framework and the family of Spring projects are often referred to simply as "Spring". 
+## 搭建Spring-Framework环境
+- Step1: Fork一下Spring官方Repository到自己的git Repository
+- Step2: 拉取自己的git Repository中Spring-Framework项目, 然后用IDEA打开
+- Step3: 配置Gradle设置, 1) use IDEA. 2) Gradle userHome. 3) 项目结构JDK版本
+- Step4: 注释掉`./setting.gradle`文件中的 `id "io.spring.ge.conventions"`
+- Step5: 刷新Gradle, 等待大约30分钟.
 
-Spring provides everything required beyond the Java programming language for creating enterprise applications for a wide range of scenarios and architectures. Please read the [Overview](https://docs.spring.io/spring/docs/current/spring-framework-reference/overview.html#spring-introduction) section as reference for a more complete introduction.
 
-## Code of Conduct
+## Spring-Demo项目 - Spring日志 [mytest01](./spring01-mytest01)
+- Step1: 创建Gradle项目.
+- Step2: 测试各种日志框架. 结论: 普通项目中, 各种日志框架相互独立并不会产生冲突(但配置各是各的), 但Spring项目中日志框架会产生冲突(但配置文件是统一的)
+- Step3: 使用JCL. 结论: JCL最大的问题是它不再维护了.
+- Step4: 使用Slf4j. 结论: Slf4j官网提供了若干绑定器, 假如有新的日志工具出现,且官网没有提供绑定器, 也可以自己实现一个绑定器.
+- 
 
-This project is governed by the [Spring Code of Conduct](CODE_OF_CONDUCT.adoc). By participating, you are expected to uphold this code of conduct. Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
 
-## Access to Binaries
-
-For access to artifacts or a distribution zip, see the [Spring Framework Artifacts](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Artifacts) wiki page.
-
-## Documentation
-
-The Spring Framework maintains reference documentation ([published](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/) and [source](src/docs/asciidoc)), Github [wiki pages](https://github.com/spring-projects/spring-framework/wiki), and an
-[API reference](https://docs.spring.io/spring-framework/docs/current/javadoc-api/). There are also [guides and tutorials](https://spring.io/guides) across Spring projects.
-
-## Micro-Benchmarks
-
-See the [Micro-Benchmarks](https://github.com/spring-projects/spring-framework/wiki/Micro-Benchmarks) Wiki page.
-
-## Build from Source
-
-See the [Build from Source](https://github.com/spring-projects/spring-framework/wiki/Build-from-Source) Wiki page and the [CONTRIBUTING.md](CONTRIBUTING.md) file.
-
-## Continuous Integration Builds
-
-Information regarding CI builds can be found in the [Spring Framework Concourse pipeline](ci/README.adoc) documentation.
-
-## Stay in Touch
-
-Follow [@SpringCentral](https://twitter.com/springcentral), [@SpringFramework](https://twitter.com/springframework), and its [team members](https://twitter.com/springframework/lists/team/members) on Twitter. In-depth articles can be found at [The Spring Blog](https://spring.io/blog/), and releases are announced via our [news feed](https://spring.io/blog/category/news).
-
-## License
-
-The Spring Framework is released under version 2.0 of the [Apache License](https://www.apache.org/licenses/LICENSE-2.0).
+## Spring-Demo项目 - 
